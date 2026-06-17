@@ -22,7 +22,7 @@ import {
 import { formatPrice, parseList } from "@/lib/format";
 import { orderStatuses } from "@/lib/sampleData";
 
-const storeUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://store.aliwvide.com";
+const storeUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://alnascloset.com";
 
 const emptySmartUploadForm = {
   price: "",
@@ -39,7 +39,7 @@ const emptyProductForm = {
   id: "",
   name: "",
   gender: "Women",
-  category: "Pakistani Suits",
+  category: "Suits",
   description: "",
   price: "",
   compare_at_price: "",
@@ -249,7 +249,7 @@ export default function AdminDashboard() {
       id: "",
       name: draft.title || "",
       gender: draft.gender || "Women",
-      category: draft.category || "Pakistani Suits",
+      category: draft.category || "Suits",
       description: draft.description || "",
       price: draft.price || "",
       compare_at_price: "",
@@ -299,7 +299,7 @@ export default function AdminDashboard() {
       id: product.id,
       name: product.name || "",
       gender: product.gender || "Women",
-      category: product.category || "Pakistani Suits",
+      category: product.category || "Suits",
       description: product.description || "",
       price: product.price || "",
       compare_at_price: product.compare_at_price || "",
@@ -408,7 +408,7 @@ export default function AdminDashboard() {
         <form onSubmit={handleLogin} className="w-full max-w-md rounded-[2rem] bg-white p-8 shadow-2xl">
           <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-stone-950 text-white"><Lock size={24} /></div>
           <h1 className="mt-6 text-center text-3xl font-bold tracking-tight">Admin Login</h1>
-          <p className="mt-2 text-center text-sm text-stone-500">Private product and order management for Aliwvide Store.</p>
+          <p className="mt-2 text-center text-sm text-stone-500">Private product and order management for Alna's Hub.</p>
 
           {loginError && <div className="mt-5 rounded-2xl border border-red-200 bg-red-50 p-3 text-sm text-red-700">{loginError}</div>}
 
@@ -428,7 +428,7 @@ export default function AdminDashboard() {
       <header className="border-b border-stone-200 bg-white px-5 py-4">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div>
-            <h1 className="text-2xl font-bold">Aliwvide Store Admin</h1>
+            <h1 className="text-2xl font-bold">Alna's Hub Admin</h1>
             <p className="text-sm text-stone-500">Hidden route. Customers cannot see this link on the website.</p>
           </div>
           <div className="flex flex-wrap gap-3">
@@ -521,7 +521,7 @@ function AIStoreManager({ smartUploadForm, setSmartUploadForm, generateSmartDraf
           <Input label="Price" type="number" value={smartUploadForm.price} onChange={(value) => setSmartUploadForm({ ...smartUploadForm, price: value })} placeholder="4299" />
           <Input label="Stock" type="number" value={smartUploadForm.stock} onChange={(value) => setSmartUploadForm({ ...smartUploadForm, stock: value })} placeholder="10" />
           <Select label="Gender Optional" value={smartUploadForm.gender} onChange={(value) => setSmartUploadForm({ ...smartUploadForm, gender: value })} options={["Auto", "Women"]} />
-          <Select label="Product Type Optional" value={smartUploadForm.category} onChange={(value) => setSmartUploadForm({ ...smartUploadForm, category: value })} options={["Auto", "Pakistani Suits"]} />
+          <Select label="Product Type Optional" value={smartUploadForm.category} onChange={(value) => setSmartUploadForm({ ...smartUploadForm, category: value })} options={["Auto", "Suits"]} />
           <Input label="Color Optional" value={smartUploadForm.color} onChange={(value) => setSmartUploadForm({ ...smartUploadForm, color: value })} placeholder="Auto or Black" />
           <Input label="Sizes" value={smartUploadForm.sizes} onChange={(value) => setSmartUploadForm({ ...smartUploadForm, sizes: value })} placeholder="S, M, L" />
           <div className="md:col-span-2">
@@ -602,7 +602,7 @@ function ProductForm({ productForm, setProductForm, saveProduct, saving, uploadi
         <Input label="Compare Price Optional" type="number" value={productForm.compare_at_price} onChange={(value) => setProductForm({ ...productForm, compare_at_price: value })} placeholder="5299" />
         <Input label="Stock" type="number" value={productForm.stock} onChange={(value) => setProductForm({ ...productForm, stock: value })} placeholder="10" />
         <Select label="Gender" value={productForm.gender} onChange={(value) => setProductForm({ ...productForm, gender: value })} options={["Women"]} />
-        <Select label="Category" value={productForm.category} onChange={(value) => setProductForm({ ...productForm, category: value })} options={["Pakistani Suits"]} />
+        <Select label="Category" value={productForm.category} onChange={(value) => setProductForm({ ...productForm, category: value })} options={["Suits"]} />
         <Input label="Sizes" value={productForm.sizes} onChange={(value) => setProductForm({ ...productForm, sizes: value })} placeholder="S, M, L, XL" />
         <Input label="Colors" value={productForm.colors} onChange={(value) => setProductForm({ ...productForm, colors: value })} placeholder="Black, Navy, Beige" />
         <Select label="Status" value={productForm.status} onChange={(value) => setProductForm({ ...productForm, status: value })} options={["published", "draft"]} />
@@ -686,7 +686,7 @@ function getOrderItemsText(order) {
 }
 
 function createWhatsAppMessage(order) {
-  return `Hello ${order.customer_name},\n\nThank you for your order from Aliwvide Store.\n\nWebsite: ${storeUrl}\n\nOrder ID: ${order.order_number}\n\nOrder Details:\n${getOrderItemsText(order)}\n\nTotal Amount: ${formatPrice(order.total_amount)}\nPayment Method: ${order.payment_method}\nOrder Status: ${order.order_status}\n\nDelivery Address:\n${order.customer_address}, ${order.customer_city}\n\nWe have received your order and will contact you soon for confirmation.\n\nThank you,\nAliwvide Store`;
+  return `Hello ${order.customer_name},\n\nThank you for your order from Alna's Hub.\n\nWebsite: ${storeUrl}\n\nOrder ID: ${order.order_number}\n\nOrder Details:\n${getOrderItemsText(order)}\n\nTotal Amount: ${formatPrice(order.total_amount)}\nPayment Method: ${order.payment_method}\nOrder Status: ${order.order_status}\n\nDelivery Address:\n${order.customer_address}, ${order.customer_city}\n\nWe have received your order and will contact you soon for confirmation.\n\nThank you,\nAlna's Hub`;
 }
 
 function getWhatsAppUrl(order) {

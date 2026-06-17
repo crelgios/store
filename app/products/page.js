@@ -7,8 +7,8 @@ import { getPublishedProducts } from "@/lib/products";
 export const dynamic = "force-dynamic";
 
 export const metadata = {
-  title: "Indian & Pakistani Suits",
-  description: "Browse Aliwvide Store women’s Indian suits, Pakistani suits, embroidered suits, festive wear, and daily wear."
+  title: "Women Suits",
+  description: "Browse Alna's Hub women’s suits, embroidered suits, festive wear, and daily wear."
 };
 
 export default async function ProductsPage() {

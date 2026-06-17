@@ -1,5 +1,5 @@
 const storeWhatsAppNumber = process.env.NEXT_PUBLIC_STORE_WHATSAPP_NUMBER || "";
-const siteName = process.env.NEXT_PUBLIC_STORE_NAME || "Aliwvide Store";
+const siteName = process.env.NEXT_PUBLIC_STORE_NAME || "Alna's Hub";
 
 export default function FloatingWhatsApp() {
   const cleanNumber = storeWhatsAppNumber.replace(/\D/g, "");
@@ -17,7 +17,7 @@ export default function FloatingWhatsApp() {
       href={`https://wa.me/${cleanNumber}?text=${message}`}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Chat with Aliwvide Store on WhatsApp"
+      aria-label="Chat with Alna's Hub on WhatsApp"
       className="fixed bottom-20 right-4 z-[999] flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-2xl ring-4 ring-white/80 transition hover:scale-105 hover:bg-[#1ebe5d] focus:outline-none focus:ring-4 focus:ring-[#25D366]/30 md:bottom-6 md:right-6 md:h-16 md:w-16"
     >
       <svg

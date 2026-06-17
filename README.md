@@ -1,11 +1,11 @@
-# Aliwvide Store - Professional Clothing E-commerce Website
+# Alna's Hub - Professional Clothing E-commerce Website
 
-This is a complete Next.js + Supabase e-commerce starter for **Aliwvide Store**.
+This is a complete Next.js + Supabase e-commerce starter for **Alna's Hub**.
 
 Live website URL:
 
 ```txt
-https://store.aliwvide.com
+https://alnascloset.com
 ```
 
 It includes:
@@ -64,7 +64,7 @@ http://localhost:3000/aliwvide-control-7291
 After deployment:
 
 ```txt
-https://store.aliwvide.com/aliwvide-control-7291
+https://alnascloset.com/aliwvide-control-7291
 ```
 
 ## 2. Supabase Setup
@@ -138,9 +138,9 @@ If you leave `NEXT_PUBLIC_UPI_QR_URL` empty, the checkout will show a simple pla
 ```bash
 git init
 git add .
-git commit -m "Initial Aliwvide Store"
+git commit -m "Initial Alna's Hub"
 git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/aliwvide-store.git
+git remote add origin https://github.com/YOUR_USERNAME/alnas-closet.git
 git push -u origin main
 ```
 
@@ -255,7 +255,7 @@ Stock quantity is intentionally visible only inside the hidden admin panel. Cust
 The admin panel includes an **AI Store Manager** tab at the hidden admin route:
 
 ```txt
-https://store.aliwvide.com/aliwvide-control-7291
+https://alnascloset.com/aliwvide-control-7291
 ```
 
 Workflow:

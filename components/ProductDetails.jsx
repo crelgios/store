@@ -7,14 +7,14 @@ import { formatPrice } from "@/lib/format";
 
 function getCurrentCart() {
   try {
-    return JSON.parse(localStorage.getItem("aliwvide-cart") || "[]");
+    return JSON.parse(localStorage.getItem("alnas-closet-cart") || "[]");
   } catch (error) {
     return [];
   }
 }
 
 function saveCart(cart) {
-  localStorage.setItem("aliwvide-cart", JSON.stringify(cart));
+  localStorage.setItem("alnas-closet-cart", JSON.stringify(cart));
   window.dispatchEvent(new Event("cart-updated"));
 }
 

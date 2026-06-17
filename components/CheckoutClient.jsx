@@ -6,21 +6,21 @@ import { useEffect, useMemo, useState } from "react";
 import { formatPrice } from "@/lib/format";
 import { paymentMethods } from "@/lib/sampleData";
 
-const upiId = process.env.NEXT_PUBLIC_UPI_ID || "aliwvidestore@upi";
+const upiId = process.env.NEXT_PUBLIC_UPI_ID || "alnascloset@upi";
 const upiQrUrl = process.env.NEXT_PUBLIC_UPI_QR_URL || "";
 const storeWhatsAppNumber = process.env.NEXT_PUBLIC_STORE_WHATSAPP_NUMBER || "";
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://store.aliwvide.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://alnascloset.com";
 
 function loadCart() {
   try {
-    return JSON.parse(localStorage.getItem("aliwvide-cart") || "[]");
+    return JSON.parse(localStorage.getItem("alnas-closet-cart") || "[]");
   } catch (error) {
     return [];
   }
 }
 
 function saveCart(cart) {
-  localStorage.setItem("aliwvide-cart", JSON.stringify(cart));
+  localStorage.setItem("alnas-closet-cart", JSON.stringify(cart));
   window.dispatchEvent(new Event("cart-updated"));
 }
 
@@ -33,7 +33,7 @@ function normalizeWhatsAppNumber(phone) {
 function buildWhatsAppText(order, items, customer) {
   const itemLines = items.map((item) => `- ${item.name} x ${item.quantity} | Size: ${item.selectedSize || "N/A"} | Color: ${item.selectedColor || "N/A"}`).join("\n");
   return [
-    "New order from Aliwvide Store",
+    "New order from Alna's Hub",
     "",
     `Order ID: ${order.order_number}`,
     `Customer: ${customer.fullName}`,

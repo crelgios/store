@@ -17,8 +17,8 @@ const benefits = [
 
 export default async function HomePage() {
   const products = await getPublishedProducts();
-  const pakistaniProducts = products.filter((product) => product.category === "Pakistani Suits");
-  const bestProducts = (pakistaniProducts.length > 0 ? pakistaniProducts : products).slice(0, 6);
+  const suitProducts = products.filter((product) => product.category === "Suits");
+  const bestProducts = (suitProducts.length > 0 ? suitProducts : products).slice(0, 6);
 
   return (
     <main className="min-h-screen bg-[#fffaf3] text-stone-950">
@@ -28,10 +28,10 @@ export default async function HomePage() {
         <div className="mx-auto grid max-w-7xl items-center gap-8 px-5 py-10 lg:grid-cols-[0.9fr_1.1fr] lg:py-16">
           <div className="relative z-10">
             <p className="text-xs font-bold uppercase tracking-[0.35em] text-[#9b745f]">Timeless tradition. Modern you.</p>
-            <h1 className="mt-5 font-serif text-5xl leading-[0.98] text-[#2c251e] md:text-7xl">Pakistani Suits, Refined Elegance</h1>
-            <p className="mt-5 max-w-xl text-base leading-8 text-stone-600">Shop elegant Pakistani suits with premium-looking designs, soft fabrics, and a simple ordering experience.</p>
+            <h1 className="mt-5 font-serif text-5xl leading-[0.98] text-[#2c251e] md:text-7xl">Suits, Refined Elegance</h1>
+            <p className="mt-5 max-w-xl text-base leading-8 text-stone-600">Shop elegant suits with premium-looking designs, soft fabrics, and a simple ordering experience.</p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/products?category=Pakistani%20Suits" className="inline-flex items-center gap-2 rounded bg-[#5b3c2f] px-6 py-3 text-sm font-bold uppercase tracking-wider text-white hover:bg-[#432b22]">Shop Pakistani Suits <ArrowRight size={16} /></Link>
+              <Link href="/products?category=Suits" className="inline-flex items-center gap-2 rounded bg-[#5b3c2f] px-6 py-3 text-sm font-bold uppercase tracking-wider text-white hover:bg-[#432b22]">Shop Suits <ArrowRight size={16} /></Link>
             </div>
             <div className="mt-10 grid max-w-xl grid-cols-3 gap-4 text-xs font-semibold uppercase tracking-wider text-stone-600">
               <span>Premium Fabrics</span>
@@ -40,7 +40,7 @@ export default async function HomePage() {
             </div>
           </div>
           <div className="relative overflow-hidden rounded-[2rem] bg-white shadow-2xl ring-1 ring-amber-100">
-            <img src="/suits/hero-pakistani.jpg" alt="Elegant Pakistani suits hero" className="h-[360px] w-full object-cover object-center md:h-[520px]" />
+            <img src="/suits/hero-suits.jpg" alt="Elegant suits hero" className="h-[360px] w-full object-cover object-center md:h-[520px]" />
             <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-[#f6efe5]/50" />
           </div>
         </div>
@@ -61,9 +61,9 @@ export default async function HomePage() {
       <section className="mx-auto max-w-7xl px-5 py-12">
         <div className="rounded-[2rem] border border-amber-100 bg-white p-8 text-center shadow-sm">
           <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#9b745f]">Current collection</p>
-          <h2 className="mt-3 font-serif text-4xl text-[#2c251e]">Pakistani Suits Only</h2>
+          <h2 className="mt-3 font-serif text-4xl text-[#2c251e]">Suits Only</h2>
           <p className="mx-auto mt-3 max-w-2xl text-stone-600">Categories are kept inside the left menu so the homepage stays clean while your collection is small.</p>
-          <Link href="/products?category=Pakistani%20Suits" className="mt-6 inline-flex rounded bg-[#5b3c2f] px-6 py-3 text-sm font-bold uppercase tracking-wider text-white">View Collection</Link>
+          <Link href="/products?category=Suits" className="mt-6 inline-flex rounded bg-[#5b3c2f] px-6 py-3 text-sm font-bold uppercase tracking-wider text-white">View Collection</Link>
         </div>
       </section>
 
@@ -71,7 +71,7 @@ export default async function HomePage() {
         <div className="mb-8 flex items-end justify-between gap-4">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#9b745f]">Our favorites</p>
-            <h2 className="mt-2 font-serif text-4xl text-[#2c251e]">Pakistani Suit Collection</h2>
+            <h2 className="mt-2 font-serif text-4xl text-[#2c251e]">Suit Collection</h2>
           </div>
           <Link href="/products" className="hidden rounded border border-[#5b3c2f] px-5 py-2 text-sm font-semibold text-[#5b3c2f] hover:bg-[#5b3c2f] hover:text-white md:inline-flex">View all</Link>
         </div>
@@ -84,7 +84,7 @@ export default async function HomePage() {
         <div className="overflow-hidden rounded-[2rem] bg-[#f0dfd2] shadow-sm ring-1 ring-amber-100 lg:grid lg:grid-cols-[0.85fr_1.15fr]">
           <div className="p-8 md:p-12">
             <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#9b745f]">Featured collections</p>
-            <h2 className="mt-4 font-serif text-4xl leading-tight text-[#2c251e]">Elegant Pakistani suits for every moment</h2>
+            <h2 className="mt-4 font-serif text-4xl leading-tight text-[#2c251e]">Elegant suits for every moment</h2>
             <p className="mt-4 max-w-lg leading-7 text-stone-600">A focused collection for daily wear, festive occasions, and graceful styling.</p>
             <Link href="/products" className="mt-6 inline-flex rounded bg-[#5b3c2f] px-6 py-3 text-sm font-bold uppercase tracking-wider text-white">Explore collections</Link>
           </div>

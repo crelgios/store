@@ -4,7 +4,7 @@ import CheckoutClient from "@/components/CheckoutClient";
 
 export const metadata = {
   title: "Checkout",
-  description: "Review cart and place your Aliwvide Store order using Cash on Delivery or Manual UPI Payment."
+  description: "Review cart and place your Alna's Hub order using Cash on Delivery or Manual UPI Payment."
 };
 
 export default function CheckoutPage() {

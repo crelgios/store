@@ -9,6 +9,22 @@ function adminError(auth) {
   return NextResponse.json({ error: auth.message }, { status: auth.status });
 }
 
+
+async function getUniqueSlug(supabase, requestedSlug) {
+  const baseSlug = createSlug(requestedSlug || "product");
+  let slug = baseSlug;
+  let counter = 2;
+
+  while (true) {
+    const { data, error } = await supabase.from("products").select("id").eq("slug", slug).limit(1);
+    if (error) throw error;
+    if (!data || data.length === 0) return slug;
+
+    slug = `${baseSlug}-${counter}`;
+    counter += 1;
+  }
+}
+
 function validateProduct(body) {
   const name = String(body.name || "").trim();
   const price = Number(body.price);
@@ -47,9 +63,12 @@ export async function POST(request) {
     const validationError = validateProduct(body);
     if (validationError) return NextResponse.json({ error: validationError }, { status: 400 });
 
+    const supabase = getSupabaseAdmin();
+    const safeSlug = await getUniqueSlug(supabase, body.slug || body.name);
+
     const product = normalizeProduct({
       name: body.name,
-      slug: body.slug || createSlug(body.name),
+      slug: safeSlug,
       gender: body.gender || "Women",
       category: body.category || "Suits",
       description: body.description || "",
@@ -62,7 +81,6 @@ export async function POST(request) {
       status: body.status === "draft" ? "draft" : "published"
     });
 
-    const supabase = getSupabaseAdmin();
     const { data, error } = await supabase.from("products").insert(product).select("*").single();
 
     if (error) throw error;

@@ -6,14 +6,14 @@ import { useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { formatPrice } from "@/lib/format";
 
-const categoryChips = ["All", "Pakistani Suits"];
-const hiddenMenuCategories = ["Pakistani Suits", "All Products"];
+const categoryChips = ["All", "Suits"];
+const hiddenMenuCategories = ["Suits", "All Products"];
 
 export default function ProductListing({ products }) {
   const searchParams = useSearchParams();
-  const initialCategory = searchParams.get("category") || "Pakistani Suits";
+  const initialCategory = searchParams.get("category") || "Suits";
   const [search, setSearch] = useState("");
-  const [category, setCategory] = useState(categoryChips.includes(initialCategory) ? initialCategory : "Pakistani Suits");
+  const [category, setCategory] = useState(categoryChips.includes(initialCategory) ? initialCategory : "Suits");
   const [sort, setSort] = useState("newest");
 
   const filtered = useMemo(() => {
@@ -35,7 +35,7 @@ export default function ProductListing({ products }) {
         <div className="flex items-center justify-between px-4 py-3">
           <Link href="/" aria-label="Back"><ArrowLeft size={30} /></Link>
           <div className="flex-1 px-4">
-            <h1 className="text-lg font-bold">Pakistani Suits</h1>
+            <h1 className="text-lg font-bold">Suits</h1>
             <p className="text-sm text-stone-500">{filtered.length} Products</p>
           </div>
           <div className="flex items-center gap-4">
@@ -49,8 +49,8 @@ export default function ProductListing({ products }) {
       <div className="mx-auto max-w-7xl px-4 py-6 md:px-5 md:py-12">
         <div className="hidden rounded-[2rem] bg-[#f6efe5] p-8 md:block">
           <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#9b745f]">Women’s suits</p>
-          <h1 className="mt-3 font-serif text-5xl text-[#2c251e]">Shop Pakistani Suits</h1>
-          <p className="mt-3 max-w-2xl text-stone-600">Browse your current Pakistani suits collection with a clean mobile-friendly shopping layout.</p>
+          <h1 className="mt-3 font-serif text-5xl text-[#2c251e]">Shop Suits</h1>
+          <p className="mt-3 max-w-2xl text-stone-600">Browse your current suits collection with a clean mobile-friendly shopping layout.</p>
         </div>
 
         <div className="mt-4 flex items-center justify-between gap-3 md:mt-8">
@@ -102,7 +102,7 @@ export default function ProductListing({ products }) {
 
       <div className="fixed bottom-0 left-0 right-0 z-50 grid grid-cols-3 border-t border-stone-700 bg-stone-950 text-white md:hidden">
         <button onClick={() => setSort(sort === "low-high" ? "high-low" : "low-high")} className="flex items-center justify-center gap-2 py-4 text-sm font-bold uppercase"><SlidersHorizontal size={18} /> Sort By</button>
-        <button onClick={() => setCategory(category === "Pakistani Suits" ? "All" : "Pakistani Suits")} className="border-x border-stone-700 py-4 text-sm font-bold uppercase">Menu</button>
+        <button onClick={() => setCategory(category === "Suits" ? "All" : "Suits")} className="border-x border-stone-700 py-4 text-sm font-bold uppercase">Menu</button>
         <button className="flex items-center justify-center gap-2 py-4 text-sm font-bold uppercase"><Filter size={18} /> Filters</button>
       </div>
     </section>

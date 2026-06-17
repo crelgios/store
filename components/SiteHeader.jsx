@@ -4,12 +4,12 @@ import Link from "next/link";
 import { Menu, Search, ShoppingBag } from "lucide-react";
 import { useEffect, useState } from "react";
 
-const storeName = process.env.NEXT_PUBLIC_STORE_NAME || "Aliwvide Store";
+const storeName = process.env.NEXT_PUBLIC_STORE_NAME || "Alna's Hub";
 
 function getCartCount() {
   if (typeof window === "undefined") return 0;
   try {
-    const cart = JSON.parse(localStorage.getItem("aliwvide-cart") || "[]");
+    const cart = JSON.parse(localStorage.getItem("alnas-closet-cart") || "[]");
     return cart.reduce((total, item) => total + Number(item.quantity || 0), 0);
   } catch (error) {
     return 0;
@@ -41,20 +41,20 @@ export default function SiteHeader() {
             </summary>
             <div className="absolute left-0 top-12 z-50 w-64 rounded-2xl border border-amber-100 bg-white p-3 shadow-2xl">
               <p className="px-3 py-2 text-xs font-bold uppercase tracking-[0.2em] text-[#9b745f]">Shop</p>
-              <Link href="/products?category=Pakistani%20Suits" className="block rounded-xl px-3 py-3 text-sm font-semibold text-stone-700 hover:bg-[#fffaf3]">Pakistani Suits</Link>
+              <Link href="/products?category=Suits" className="block rounded-xl px-3 py-3 text-sm font-semibold text-stone-700 hover:bg-[#fffaf3]">Suits</Link>
               <Link href="/products" className="block rounded-xl px-3 py-3 text-sm font-semibold text-stone-700 hover:bg-[#fffaf3]">All Products</Link>
               <Link href="/checkout" className="block rounded-xl px-3 py-3 text-sm font-semibold text-stone-700 hover:bg-[#fffaf3]">Checkout</Link>
             </div>
           </details>
 
           <Link href="/" className="leading-none">
-            <span className="block font-serif text-3xl tracking-tight text-[#5b3c2f]">Aliwvide</span>
-            <span className="block text-center text-xs font-semibold uppercase tracking-[0.35em] text-[#9b745f]">Store</span>
+            <span className="block font-serif text-3xl tracking-tight text-[#5b3c2f]">Alna's</span>
+            <span className="block text-center text-xs font-semibold uppercase tracking-[0.35em] text-[#9b745f]">Hub</span>
           </Link>
         </div>
 
         <nav className="hidden items-center gap-7 text-sm font-semibold text-stone-700 lg:flex">
-          <Link href="/products?category=Pakistani%20Suits" className="hover:text-[#5b3c2f]">Pakistani Suits</Link>
+          <Link href="/products?category=Suits" className="hover:text-[#5b3c2f]">Suits</Link>
           <Link href="/products" className="hover:text-[#5b3c2f]">New Arrivals</Link>
           <Link href="/products" className="hover:text-[#5b3c2f]">Best Sellers</Link>
           <Link href="/checkout" className="hover:text-[#5b3c2f]">Checkout</Link>

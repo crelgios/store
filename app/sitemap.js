@@ -1,7 +1,7 @@
 import { getPublishedProducts } from "@/lib/products";
 
 export default async function sitemap() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://store.aliwvide.com";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://alnascloset.com";
   const products = await getPublishedProducts();
 
   const baseRoutes = [

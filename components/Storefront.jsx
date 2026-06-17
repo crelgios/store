@@ -15,8 +15,8 @@ import {
 import { formatPrice } from "@/lib/format";
 import { menCategories, paymentMethods, womenCategories } from "@/lib/sampleData";
 
-const storeName = process.env.NEXT_PUBLIC_STORE_NAME || "Aliwvide Store";
-const upiId = process.env.NEXT_PUBLIC_UPI_ID || "aliwvidestore@upi";
+const storeName = process.env.NEXT_PUBLIC_STORE_NAME || "Alna's Hub";
+const upiId = process.env.NEXT_PUBLIC_UPI_ID || "alnascloset@upi";
 const upiQrUrl = process.env.NEXT_PUBLIC_UPI_QR_URL || "";
 
 export default function Storefront() {
@@ -214,15 +214,15 @@ export default function Storefront() {
         <div className="mx-auto max-w-7xl">
           <div className="relative overflow-hidden rounded-[2rem] bg-stone-200 shadow-2xl">
             <img
-              src="/hero-aliwvide-store.png"
-              alt="Aliwvide Store new collection hero banner showing modern professional clothing for men and women"
+              src="/hero-alnas-closet.png"
+              alt="Alna's Hub new collection hero banner showing modern professional clothing for men and women"
               className="block h-auto w-full object-cover"
               loading="eager"
             />
             <a
               href="#products"
               className="absolute left-[5.5%] top-[67%] hidden h-14 w-56 rounded-sm focus:outline-none focus:ring-4 focus:ring-stone-950/30 md:block"
-              aria-label="Shop Aliwvide Store collection"
+              aria-label="Shop Alna's Hub collection"
             />
           </div>
 

@@ -15,10 +15,10 @@ export async function generateMetadata({ params }) {
 
   return {
     title: product.name,
-    description: product.description || `Shop ${product.name} at Aliwvide Store.`,
+    description: product.description || `Shop ${product.name} at Alna's Hub.`,
     openGraph: {
       title: product.name,
-      description: product.description || `Shop ${product.name} at Aliwvide Store.`,
+      description: product.description || `Shop ${product.name} at Alna's Hub.`,
       images: product.images?.[0] ? [product.images[0]] : []
     }
   };
